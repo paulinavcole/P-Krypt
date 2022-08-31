@@ -1,3 +1,4 @@
+import React, { useContext } from 'react';
 import { AiFillAlipayCircle } from "react-icons/ai";
 import { SiEthereum } from 'react-icons/si';
 import { BsInfoCircle } from 'react-icons/bs';
@@ -28,8 +29,8 @@ const Welcome = () => {
 
     return (
         <div className='flex w-full justify-center items-center'>
-            <div className='flex md: flex-row flex-col items-start justify-between md:p-20 py-12 px-4'>
-                <div className='flex flex-1 justify-start flex-col md:mr-10'>
+            <div className='flex mf: flex-row flex-col items-start justify-between md:p-20 py-12 px-4'>
+                <div className='flex flex-1 justify-start items-start flex-col mf:mr-10'>
                     <h1 className='text-3xl sm:text-5xl text-white text-gradient py-1'>
                         Send Cyrpto <br/> anywhere in the world
                     </h1>
@@ -42,6 +43,7 @@ const Welcome = () => {
                         className='flex flex-row justify-center items-center my-5 bg-[#2952e3] p-3 rounded-full cursor-pointer hover:bg-[#2546bd]'>
                         <p className='text-white text-base font-semibold'>Connect Wallet</p>
                     </button>
+
                     <div className='grid sm:grid-cols-3 grid-cols-2 w-full mt-10"'>
                         <div className={`rounded-tl-2xl ${commonStyles}`}>
                             Reliability
@@ -88,9 +90,10 @@ const Welcome = () => {
                         <Input placeholder='Amount (ETH)' name='amount' type='number' handleChange={() => {}} />
                         <Input placeholder='Keyword (GIF)' name='keyword' type='text' handleChange={() => {}} />
                         <Input placeholder='Enter a Message' name='message' type='text' handleChange={() => {}} />
+                    
                     <div className='h-[1px] w-full bg-gray-400 my-2'/>
                     
-                    {true ? (
+                    {false ? (
                         <Loader />
                     ) : (
                         <button
@@ -101,12 +104,11 @@ const Welcome = () => {
                             Send Now
                         </button>
                     )}
-
-                    </div>
+                </div>
             </div>
         </div>
     </div>
     );
-}
+};
 
 export default Welcome;
