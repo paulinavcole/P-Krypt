@@ -17,8 +17,8 @@ body {
   background-color:#0f0e13;
   background-image: 
     radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
-    radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
-    radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+    radial-gradient(at 50% 0%, rgb(12, 54, 38) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, rgb(214, 249, 106) 0, transparent 50%);
 }
 
 .gradient-bg-services {
@@ -38,7 +38,7 @@ body {
 .gradient-bg-footer {
   background-color: #0f0e13;
   background-image: 
-    radial-gradient(at 0% 100%, hsla(253,16%,7%,1) 0, transparent 53%), 
+    radial-gradient(at 0% 100%, rgb(24, 59, 84) 0, transparent 53%), 
     radial-gradient(at 50% 150%, hsla(339,49%,30%,1) 0, transparent 50%);
 }
 
@@ -63,7 +63,7 @@ body {
 .eth-card {
   background-color:#a099ff;
   background-image: 
-    radial-gradient(at 83% 67%, rgb(152, 231, 156) 0, transparent 58%), 
+    radial-gradient(at 83% 67%, rgb(152, 209, 231) 0, transparent 58%), 
     radial-gradient(at 67% 20%, hsla(357,94%,71%,1) 0, transparent 59%), 
     radial-gradient(at 88% 35%, hsla(222,81%,65%,1) 0, transparent 50%), 
     radial-gradient(at 31% 91%, hsla(9,61%,61%,1) 0, transparent 52%), 

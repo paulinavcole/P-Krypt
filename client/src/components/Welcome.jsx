@@ -35,7 +35,7 @@ const Welcome = () => {
                         Send Cyrpto <br/> anywhere in the world
                     </h1>
                     <p className='text-left mt-5 text-white font-light md:w-9/12 w-11/12 text-base'>
-                        Explore the Crypto world. Buy and sell cryptocurrencies easily on Krypt.
+                        Explore the Crypto world. Buy and sell cryptocurrencies easily.
                     </p>
                     <button
                         type='button'
@@ -46,10 +46,10 @@ const Welcome = () => {
 
                     <div className='grid sm:grid-cols-3 grid-cols-2 w-full mt-10"'>
                         <div className={`rounded-tl-2xl ${commonStyles}`}>
-                            Reliability
+                            Decentralized
                         </div>
                         <div className={commonStyles}>
-                            Security
+                            Reliable
                         </div>
                         <div className={`rounded-tr-2xl ${commonStyles}`}>
                             Ethereum
@@ -58,7 +58,7 @@ const Welcome = () => {
                             Web 3.0
                         </div>
                         <div className={commonStyles}>
-                            Low Fees Always
+                            Secure
                         </div>
                         <div className={`rounded-br-2xl ${commonStyles}`}>
                             Blockchain
