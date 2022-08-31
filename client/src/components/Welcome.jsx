@@ -22,6 +22,10 @@ const Welcome = () => {
     const connectWallet = () => {
 
     }
+    const handleSubmit = () => {
+
+    }
+
     return (
         <div className='flex w-full justify-center items-center'>
             <div className='flex md: flex-row flex-col items-start justify-between md:p-20 py-12 px-4'>
@@ -89,8 +93,13 @@ const Welcome = () => {
                     {true ? (
                         <Loader />
                     ) : (
-                        <div>
-                        </div>
+                        <button
+                            type='button'
+                            onClick={handleSubmit}
+                            className='text-white w-full mt-2 border-[1px] p-2 border-[#3d4f7c] rounded-full cursor-pointer'
+                        >
+                            Send Now
+                        </button>
                     )}
 
                     </div>
