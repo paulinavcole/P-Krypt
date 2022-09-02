@@ -16,13 +16,14 @@ const TransactionCard = ( {addressTo, addressFrom, timestamp, message, keyword, 
             flex-col p-3 rounded-md hover:shadow-2xl
         '>
             <div className='display-flex justify-start w-full mb-6 p-2"'>
-                <div className='flex justify-start w-full mb-6 p-2'>
+                <div className='w-full mb-6 p-2'>
                     <a href={`https://goerli.etherscan.io/address/${addressFrom}`} target="_blank" rel="noreferrer">
                         <p className="text-white text-base">From: {shortenAddress(addressFrom)}</p>
                     </a>
                     <a href={`https://goerli.etherscan.io/address/${addressTo}`} target="_blank" rel="noreferrer">
                         <p className="text-white text-base">To: {shortenAddress(addressTo)}</p>
                     </a>
+                    <p className='text-white text-base'>Amount: {amount} ETH</p>
                 </div>
             </div>
         </div>
