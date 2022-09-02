@@ -7,6 +7,7 @@ export const TransactionContext = React.createContext();
 
 const { ethereum } = window
 
+
 const getEthereumContract = () => {
     const provider = new ethers.providers.Web3Provider(ethereum);
     const signer = provider.getSigner();
@@ -19,6 +20,8 @@ export const TransactionProvider = ({ children }) => {
 
     const [currentAccount, setCurrentAccount] = useState('')
     const [formData, setFormData] = useState({ addressTo: '', amount: '', keyword: '', message: ''});
+    const [isLoading, setIsLoading] = useState(false);
+    const [transactionCount, setTransactionCount] = useState(localStorage.getItem('transactionCount'));
 
     const handleChange = (e, name) => {
         setFormData((prevState) => ({...prevState, [name] : e.target.value }));
@@ -40,7 +43,6 @@ export const TransactionProvider = ({ children }) => {
 
         } catch(err ){
             console.log(err);
-            throw new Error('No ethereum object.')
         }
     }
 
@@ -53,7 +55,7 @@ export const TransactionProvider = ({ children }) => {
         }
         catch(err) {
             console.log(err);
-            throw new Error('No ethereum object.')
+            throw new Error('No ethereum object.');
         }
     }
 
@@ -73,11 +75,22 @@ export const TransactionProvider = ({ children }) => {
                     gas: '0x5208', //2100 GWEI
                     value: parsedAmount._hex,
                 }]
-            })
+            });
+        
+            const transactionHash = await transactionContract.addToBlockChain(addressTo, parsedAmount, message, keyword);
+
+            setIsLoading(true);
+            console.log(`Loading - ${transactionHash.hash}`);
+            await transactionHash.wait();
+            console.log(`Success- ${transactionHash.hash}`);
+            setIsLoading(false);
+
+            const transactionCount = await transactionContract.getTransactionCount();
+            setTransactionCount(transactionCount.toNumber());
 
         } catch(err) {
             console.log(err);
-            throw new Error('No ethereum object.')
+            throw new Error('No ethereum object.');
         }
     }
     useEffect(() => {
