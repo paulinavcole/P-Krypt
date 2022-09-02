@@ -21,15 +21,15 @@ const getEthereumContract = () => {
 
 export const TransactionProvider = ({ children }) => {
 
-    const [connectedAccount, setConnectedAccount] = useState('')
+    const [currentAccount, setCurrentAccount] = useState('')
 
     const checkIfWalletIsConnected = async () => {
         try {
-            if(!ethereum) return alert('Please install metamask.');
+            if(!ethereum) return alert('Please install MetaMask.');
 
-            const accounts = await ethereum.request({ method: 'eth_accounts'})
+            const accounts = await ethereum.request({ method: 'eth_accounts'});
 
-            if(accounts.length) {
+            if (accounts.length) {
                 setCurrentAccount(accounts[0]);
 
                 //getAllTransactions();
@@ -45,8 +45,8 @@ export const TransactionProvider = ({ children }) => {
 
     const connectWallet = async () => {
         try {
-            if(!ethereum) return alert('Please install metamask!');
-            const accounts = await ethereum.request({ method: 'eth_requestAccounts'})
+            if(!ethereum) return alert('Please install MetaMask!');
+            const accounts = await ethereum.request({ method: 'eth_requestAccounts'});
 
             setCurrentAccount(accounts[0]);
         }
@@ -61,7 +61,7 @@ export const TransactionProvider = ({ children }) => {
     }, [])
 
     return (
-        <TransactionContext.Provider value={{ connectWallet }}>
+        <TransactionContext.Provider value={{ connectWallet, currentAccount }}>
             {children}
         </TransactionContext.Provider>
     );  
