@@ -127,7 +127,7 @@ export const TransactionProvider = ({ children }) => {
             const transactionCount = await transactionContract.getTransactionCount();
             setTransactionCount(transactionCount.toNumber());
 
-            window.reload();
+            window.location.reload();
 
         } catch(err) {
             console.log(err);
