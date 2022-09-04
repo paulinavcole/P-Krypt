@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { AiFillAlipayCircle } from "react-icons/ai";
 import { SiEthereum } from 'react-icons/si';
 import { BsInfoCircle } from 'react-icons/bs';
 import { TransactionContext } from '../context/TransactionContext';
@@ -58,10 +57,10 @@ const Welcome = () => {
                             Reliable
                         </div>
                         <div className={`rounded-tr-2xl ${commonStyles}`}>
-                            Ethereum
+                            Smart Contracts
                         </div>
                         <div className={`rounded-bl-2xl ${commonStyles}`}>
-                            Web 3.0
+                            Global
                         </div>
                         <div className={commonStyles}>
                             Secure
@@ -79,11 +78,10 @@ const Welcome = () => {
                                 <div className='w-10 h-10 rounded-full border-2 border-white flex justify-center items-center'>
                                     <SiEthereum fontSize={21} color='#fff' />
                                 </div>
-                                <BsInfoCircle fontSize={20} color='#fff' />
                             </div>
                             <div>
                                 <p className='text-white font-light text-sm'>
-                                    {shortenAddress(currentAccount)}                                   
+                                    Account Address: {shortenAddress(currentAccount)}                                   
                                 </p>
                                 <p className='text-white font-semibold text-lg mt-1'>
                                     Ethereum                                    
