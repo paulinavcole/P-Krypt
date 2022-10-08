@@ -8,6 +8,7 @@ Create a MetaMask account to create your crypto wallet: https://metamask.io/
 
 ## About the App
 Once logged in, the user's account address is displayed and they can send Ether(ETH) to users across the world.
+
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/68308236/188491429-e68ce88b-e930-4bfc-b30d-6e362f296489.png">
 
 After a transaction is made, previous transactions are displayed showing the addresses, message, timestamp, unique gif, and amount of the transaction. User can click on the To/From address to access Etherscan for additional info on the transaction.  
